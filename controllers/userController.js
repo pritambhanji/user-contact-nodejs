@@ -15,7 +15,7 @@ const getUsers = asyncHandler(async(req, res) => {
 //@desc Create New User
 //@route POST /api/users
 //@access Private
-const createUser = asyncHandler(async(req, res) => {
+const registerUser = asyncHandler(async(req, res) => {
     const {name, email, password} = req.body
     if (!name || !email || !password) {
         res.status(400).json({ message: "All fields are required" });
@@ -70,7 +70,7 @@ const deleteUser = asyncHandler(async(req, res) => {
 
 module.exports = {
     getUsers,
-    createUser,
+    registerUser,
     getUser,
     updateContacUser,
     deleteUser
